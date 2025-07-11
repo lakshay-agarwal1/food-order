@@ -1,0 +1,109 @@
+
+.mainDiv {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(34, 34, 59, 0.08);
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+.topSection {
+  background: #f3f3f3;
+  padding: 22px 20px 13px 20px;
+  border-bottom: 1px solid #e2e2e2;
+  text-align: center;
+}
+
+.restName {
+  font-size: 1.7rem;
+  color: #222;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.restDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.cuisineList {
+  font-style: italic;
+}
+
+.costForTwo {
+  font-weight: 500;
+}
+
+.menuDiv {
+  padding: 17px 20px 22px 20px;
+}
+
+.menuHeading {
+  font-size: 1.1rem;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 7px;
+  margin-bottom: 13px;
+  font-weight: 600;
+}
+
+.ulMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuLi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.menuLi:last-child {
+  border-bottom: none;
+}
+
+.menuLi:hover {
+  background: #f9f9f9;
+  color: #7a7a7a;
+  cursor: pointer;
+}
+
+.foodName {
+  font-weight: 500;
+}
+
+.foodPrice {
+  color: #a67;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .mainDiv {
+    max-width: 98vw;
+  }
+  .topSection,
+  .menuDiv {
+    padding: 12px 4vw;
+  }
+  .restName {
+    font-size: 1.1rem;
+  }
+  .menuHeading {
+    font-size: 1rem;
+  }
+  .menuLi {
+    font-size: 0.92rem;
+    padding: 8px 0;
+  }
+}
