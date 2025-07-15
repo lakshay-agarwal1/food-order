@@ -1,71 +1,121 @@
-
-.mainDiv {
-  max-width: 600px;
-  margin: 40px auto;
-  background: #fff;
+/* .mainDiv {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #1e1e1e;
   border-radius: 14px;
-  box-shadow: 0 2px 16px rgba(34, 34, 59, 0.08);
-  font-family: Arial, sans-serif;
-  padding: 0;
+  box-shadow: 0 3px 25px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 .topSection {
-  background: #f3f3f3;
-  padding: 22px 20px 13px 20px;
-  border-bottom: 1px solid #e2e2e2;
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-bottom: 1px solid #444;
   text-align: center;
 }
 
 .restName {
-  font-size: 1.7rem;
-  color: #222;
-  margin-bottom: 7px;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e0e0e0;
 }
 
 .restDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  color: #555;
-  font-size: 1rem;
-}
-
-.cuisineList {
-  font-style: italic;
-}
-
-.costForTwo {
+  margin-top: 10px;
+  color: #a0a0a0;
   font-weight: 500;
 }
 
 .menuDiv {
-  padding: 17px 20px 22px 20px;
+  padding: 20px;
 }
 
 .menuHeading {
-  font-size: 1.1rem;
-  color: #333;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 7px;
-  margin-bottom: 13px;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ff9800;
+  border-bottom: 1px solid #333;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
 }
 
 .ulMenu {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .menuLi {
   display: flex;
   justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #2e2e2e;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.menuLi:hover {
+  background-color: #2a2a2a;
+}
+
+.foodName {
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.foodPrice {
+  color: #ffa726;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.menuCategory {
+  margin-bottom: 1.5rem;
+  background-color: #252525;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #e2e2e2;
-  font-size: 1rem;
-  border-radius: 4px;
+  padding: 14px 20px;
+  background-color: #2c2c2c;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordionHeader:hover {
+  background-color: #333;
+}
+
+.categoryTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff9800;
+  margin: 0;
+}
+
+.accordionIcon {
+  font-size: 1.2rem;
+  color: #ff9800;
+}
+
+.ulMenu {
+  list-style: none;
+  padding: 0 20px 10px;
+}
+
+.menuLi {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #2e2e2e;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+  color: #e0e0e0;
 }
 
 .menuLi:last-child {
@@ -73,37 +123,169 @@
 }
 
 .menuLi:hover {
-  background: #f9f9f9;
-  color: #7a7a7a;
-  cursor: pointer;
+  background-color: #2a2a2a;
 }
 
 .foodName {
-  font-weight: 500;
+  font-weight: 600;
+  color: #f0f0f0;
 }
 
 .foodPrice {
-  color: #a67;
-  font-size: 0.95rem;
+  color: #ffa726;
   font-style: italic;
+  font-weight: 700;
+} */
+
+/* Container max width, center align and dark theme */
+.mainDiv {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #1e1e1e;
+  border-radius: 14px;
+  box-shadow: 0 3px 25px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@media (max-width: 700px) {
+/* Top section with restaurant info */
+.topSection {
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+.restName {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffb347; /* Warm orange */
+  letter-spacing: 1.2px;
+}
+
+.restDetails {
+  margin-top: 8px;
+  color: #bbb;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Menu heading */
+.menuDiv {
+  padding: 20px;
+  max-height: 650px; /* limit height so it won't stretch too long */
+  overflow-y: auto; /* vertical scroll if content overflows */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #ff9800 transparent; /* Firefox */
+}
+
+/* Chrome, Edge, Safari scrollbar styles */
+.menuDiv::-webkit-scrollbar {
+  width: 8px;
+}
+.menuDiv::-webkit-scrollbar-track {
+  background: transparent;
+}
+.menuDiv::-webkit-scrollbar-thumb {
+  background-color: #ff9800;
+  border-radius: 20px;
+  border: 2px solid transparent;
+}
+
+/* Menu title */
+.menuHeading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+}
+
+/* Each category container */
+.menuCategory {
+  margin-bottom: 2.5rem;
+}
+
+/* Category title styling */
+.categoryTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffa726;
+  margin-bottom: 12px;
+  border-left: 4px solid #ffa726;
+  padding-left: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Menu list styling */
+.ulMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each food item line */
+.menuLi {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease;
+  font-weight: 600;
+  cursor: default;
+  background-color: #2a2a2a;
+  margin-bottom: 8px;
+}
+
+.menuLi:hover {
+  background-color: #3a3a3a;
+}
+
+/* Food name and price */
+.foodName {
+  color: #fff;
+  flex: 1 1 auto;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.foodPrice {
+  color: #ffb347;
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 16px;
+  min-width: 50px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
   .mainDiv {
-    max-width: 98vw;
-  }
-  .topSection,
-  .menuDiv {
-    padding: 12px 4vw;
+    margin: 1rem;
   }
   .restName {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
   }
   .menuHeading {
-    font-size: 1rem;
+    font-size: 1.3rem;
+  }
+  .categoryTitle {
+    font-size: 1.1rem;
   }
   .menuLi {
-    font-size: 0.92rem;
-    padding: 8px 0;
+    padding: 10px 12px;
+  }
+  .foodName {
+    font-size: 0.9rem;
+  }
+  .foodPrice {
+    font-size: 0.9rem;
+    min-width: 40px;
   }
 }

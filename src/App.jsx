@@ -1,19 +1,18 @@
 import Layout from "./components/Layout";
 import About from "./pages/about/About";
-import Body from "./components/Body";
 import Contact from "./pages/contact/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Err from "./components/Err";
 import ResMenu from "./pages/menu/ResMenu";
+import Body from "./components/body/Body";
+import { lazy, Suspense } from "react";
 
+const Instamart = lazy(() => import("./pages/Instamart/Instamart"));
 function App() {
   return (
     <>
-    
-      <RouterProvider router={appRouter}>
-
-      </RouterProvider>
+      <RouterProvider router={appRouter}></RouterProvider>
     </>
   );
 }
@@ -33,13 +32,21 @@ const appRouter = createBrowserRouter([
         element: <About />,
       },
       {
-        path : "/contact",
-        element : <Contact/>
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path : "/restaurant/:resid",
-        element: <ResMenu/>
-      }
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<h4>INSTAMART IS LOADING</h4>}>
+            <Instamart />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/restaurant/:resid",
+        element: <ResMenu />,
+      },
     ],
   },
 ]);

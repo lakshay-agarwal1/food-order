@@ -1,0 +1,12 @@
+div {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  color: #ccc;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff9800;
+}
