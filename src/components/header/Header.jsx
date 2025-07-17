@@ -5,13 +5,16 @@ import About from "../../pages/about/About";
 import { Link, Outlet } from "react-router-dom";
 import useOnlineStatus from "../../Utils/hooks/useOnlineStatus";
 import UserContext from "../../Utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnName, setBtnName] = useState("login");
   const status = useOnlineStatus();
 
-  const {loggedUser} = useContext(UserContext);
+  const { loggedUser } = useContext(UserContext);
   console.log(loggedUser);
 
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <>
       <div className="header">
@@ -41,8 +44,8 @@ const Header = () => {
               <Link to={"/instamart"}>Instamart</Link>
             </li>
             <li>
-              <Link to={"/Cart"} tabIndex={0}>
-                Cart
+              <Link to={"/cart"} tabIndex={0}>
+                Cart - {cartItems.length}
               </Link>
             </li>
             <li>
@@ -55,9 +58,7 @@ const Header = () => {
                     : setBtnName("login");
                 }}
               >
-                {btnName},
-                
-                { loggedUser}
+                {btnName},{loggedUser}
               </button>
             </li>
           </ul>

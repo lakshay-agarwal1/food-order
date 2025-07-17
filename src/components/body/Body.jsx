@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ResCard from "../rescard/ResCard";
 import { withLabel } from "../../Utils/HOC/withLabel";
 import Shimmer from "../shimmer-ui/Shimmer";
@@ -7,6 +7,7 @@ import "./body.css";
 import useRestaurants from "../../Utils/hooks/useRestaurants";
 import useOnlineStatus from "../../Utils/hooks/useOnlineStatus";
 
+import UserContext from "../../Utils/UserContext";
 const Body = () => {
   const { filteredList, loading, filterbyRating, searchByName } =
     useRestaurants();
@@ -14,6 +15,9 @@ const Body = () => {
 
   const status = useOnlineStatus();
   const PromotedCard = withLabel(ResCard);
+ const {loggedUser,setUserInfo} = useContext(UserContext);
+ const data = useContext(UserContext);
+ console.log(data);
   //promoted card is a HOC with rescard as a prop
 
   if (status === false) {
@@ -41,6 +45,10 @@ const Body = () => {
             Filter top rated
           </button>
         </div>
+          <div className="search-box">
+            Name : 
+            <input type="text" placeholder="name" value= {loggedUser} onChange={(e)=> setUserInfo(e.target.value)} />
+          </div>
         <div className="search-box">
           <input
             type="text"
@@ -63,7 +71,6 @@ const Body = () => {
             ) : (
               <ResCard restaurant={restaurant.info} />
             )}
-           
           </Link>
         ))}
       </div>

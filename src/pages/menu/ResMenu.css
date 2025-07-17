@@ -171,13 +171,12 @@
   font-size: 1rem;
 }
 
-/* Menu heading */
 .menuDiv {
   padding: 20px;
-  max-height: 650px; /* limit height so it won't stretch too long */
-  overflow-y: auto; /* vertical scroll if content overflows */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #ff9800 transparent; /* Firefox */
+  max-height: 650px; 
+  overflow-y: auto;
+  scrollbar-width: thin; 
+  scrollbar-color: #ff9800 transparent; 
 }
 
 /* Chrome, Edge, Safari scrollbar styles */
@@ -220,50 +219,6 @@
   letter-spacing: 0.05em;
 }
 
-/* Menu list styling */
-.ulMenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Each food item line */
-.menuLi {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 15px;
-  border-radius: 8px;
-  transition: background-color 0.25s ease;
-  font-weight: 600;
-  cursor: default;
-  background-color: #2a2a2a;
-  margin-bottom: 8px;
-}
-
-.menuLi:hover {
-  background-color: #3a3a3a;
-}
-
-/* Food name and price */
-.foodName {
-  color: #fff;
-  flex: 1 1 auto;
-  font-size: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.foodPrice {
-  color: #ffb347;
-  font-style: italic;
-  font-weight: 700;
-  margin-left: 16px;
-  min-width: 50px;
-  text-align: right;
-  flex-shrink: 0;
-}
-
 /* Responsive tweaks */
 @media (max-width: 480px) {
   .mainDiv {
@@ -277,15 +232,5 @@
   }
   .categoryTitle {
     font-size: 1.1rem;
-  }
-  .menuLi {
-    padding: 10px 12px;
-  }
-  .foodName {
-    font-size: 0.9rem;
-  }
-  .foodPrice {
-    font-size: 0.9rem;
-    min-width: 40px;
   }
 }

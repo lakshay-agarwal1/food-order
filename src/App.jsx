@@ -7,6 +7,7 @@ import Err from "./components/Err";
 import ResMenu from "./pages/menu/ResMenu";
 import Body from "./components/body/Body";
 import { lazy, Suspense } from "react";
+import Cart from "./pages/cart/Cart";
 
 const Instamart = lazy(() => import("./pages/Instamart/Instamart"));
 function App() {
@@ -47,6 +48,10 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:resid",
         element: <ResMenu />,
       },
+      {
+        path : "/cart",
+        element: <Cart/>
+      }
     ],
   },
 ]);

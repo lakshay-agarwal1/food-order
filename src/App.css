@@ -6,6 +6,8 @@
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
   color: #e0e0e0;
+  scrollbar-width: thin; 
+  scrollbar-color: #f0aa41 transparent; 
 }
 
 body {
